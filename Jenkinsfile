@@ -1,4 +1,4 @@
-node('mavenbuilds'){
+node('maven'){
     def maven360home = tool name: 'maven360', type: 'maven'
     stage('checkout'){
         echo "Checking the Git code"
