@@ -8,3 +8,4 @@ node('maven'){
         sh "$maven360home/bin/mvn clean package"
     }
     
+}
