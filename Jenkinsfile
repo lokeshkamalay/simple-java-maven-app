@@ -11,6 +11,7 @@ node('maven'){
     }
     stage('Archive Artifcats'){
           archiveArtifacts '**/target/*.jar'
+      echo " Storing data into Articats "
           }
           }
           
