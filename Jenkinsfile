@@ -6,12 +6,11 @@ node('maven'){
     }
     stage('Building'){
         echo " Building source code "
-        
-        stage('Final'){
-            echo " completing the task "
-            
+         
         sh "$maven360home/bin/mvn clean package"
     }
+    stage('Archive Artifacts'){
+        archiveArtifacts '**/target/*.jar'
     }
 }
 
