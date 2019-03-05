@@ -14,6 +14,7 @@ node('maven'){
     }
     stage('Archive Artifacts'){
         archiveArtifacts '**/target/*.jar'
+        echo " Files have been archived "
     }
 }
 
