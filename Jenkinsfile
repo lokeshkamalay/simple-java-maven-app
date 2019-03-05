@@ -3,7 +3,7 @@ node('maven'){
     def maven360home = tool name: 'maven360', type: 'maven'
     
     stage('checkout'){
-        git branch: 'batch2', credentialsId: 'lokeshgithub', url: 'https://github.com/lokeshkamalay/simple-java-maven-app.git'
+        git branch: 'Batch2', credentialsId: 'MavenBuild', url: 'https://github.com/MNadir786/simple-java-maven-app.git'
     }
     
     
