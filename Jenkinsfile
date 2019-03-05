@@ -14,4 +14,3 @@ node('maven'){
       echo " Storing data into Articats "
           }
           }
-          
