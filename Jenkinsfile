@@ -8,4 +8,7 @@ node('maven'){
     
     
           }
+  stage(Archive Artifacts'){
+        archiveArtifacts '**/target1/*.jar'
+        }
           }
