@@ -5,8 +5,13 @@ node('maven'){
      git branch: 'JenkinsPipeline', credentialsId: 'MavenBuild', url: 'https://github.com/MNadir786/simple-java-maven-app.git'
     }
     stage('Building'){
-        echo "Adding new lines"
+        echo " Building source code "
+        
+        stage('Final'){
+            echo " completing the task "
+            
         sh "$maven360home/bin/mvn clean package"
+    }
     }
 }
 
