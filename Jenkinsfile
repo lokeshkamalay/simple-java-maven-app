@@ -9,7 +9,7 @@ node('maven'){
     stage('Test Result'){
         junit 'target/surfire-reports/*.xml'
     }
-    stage(Archive Artifcats'){
+    stage('Archive Artifcats'){
           archiveArtifacts '**/target/*.jar'
           }
           }
