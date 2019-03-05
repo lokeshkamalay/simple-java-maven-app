@@ -5,12 +5,7 @@ node('maven'){
     }
     stage('Building'){
         sh "$maven360home/bin/mvn clean package"
-    }
-    stage('Test Result'){
-        junit 'target/surfire-reports/*.xml'
-    }
-    stage('Archive Artifcats'){
-          archiveArtifacts '**/target/*.jar'
-      echo " Storing data into Articats "
+    
+    
           }
           }
