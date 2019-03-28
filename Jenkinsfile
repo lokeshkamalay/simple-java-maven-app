@@ -5,7 +5,7 @@ node('maven'){
         git credentialsId: 'githubacc', url: 'https://github.com/ramharig/simple-java-maven-app.git'
     }
     stage('test'){
-        echo "executing test caseds"
+        echo "executing test cases"
         sh "${mvnHome}/bin/mvn clean test surefire-report:report-only"
         archiveArtifacts 'target/surefire-reports/*'
         junit 'target/surefire-reports/*.xml'
