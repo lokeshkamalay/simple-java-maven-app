@@ -19,7 +19,7 @@ node('demo'){
             input 'Do you want me to prmote to Prod'
             unstash 'myPackage'
             getTarget(targetEnv) //calling function
-            sshagent(['proddeploymentssshkey']) {
+           // sshagent(['proddeploymentssshkey']) {
                 sh "scp -o StrictHostKeyChecking=no target/my-app-1-RELEASE.jar $user@$172.31.32.220:/tmp"
             }
         }
