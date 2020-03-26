@@ -17,7 +17,7 @@ node('demo'){
         stage('Deployment'){
             input 'Do you want me to prmote to Prod'
             unstash 'myPackage'
-            target = getTarget(targetEnv)
+            getTarget(targetEnv)
             sshagent(['proddeploymentssshkey']) {
                 sh "scp -o StrictHostKeyChecking=no target/my-app-1-RELEASE.jar $user@$target:/tmp"
             }
