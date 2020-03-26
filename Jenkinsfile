@@ -2,6 +2,7 @@ node('demo'){
     properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: ['dev', 'test', 'prod'], description: 'Choose the environment you want to put your package into ', name: 'targetEnv')])])
     def mvnHome = tool name: '363', type: 'maven'
     def user = "ec2-user"
+    def target = ""
     stage ('checkout'){
         git credentialsId: 'davidgithubaccount', url: 'https://github.com/dazedavid/simple-java-maven-app.git'
     }
@@ -17,7 +18,7 @@ node('demo'){
         stage('Deployment'){
             input 'Do you want me to prmote to Prod'
             unstash 'myPackage'
-            getTarget(targetEnv)
+            getTarget(targetEnv) //calling function
             sshagent(['proddeploymentssshkey']) {
                 sh "scp -o StrictHostKeyChecking=no target/my-app-1-RELEASE.jar $user@$target:/tmp"
             }
