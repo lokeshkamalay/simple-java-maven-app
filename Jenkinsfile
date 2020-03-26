@@ -20,7 +20,7 @@ node('demo'){
             unstash 'myPackage'
             target = getTarget(targetEnv) //calling function
             sshagent(['proddeploymentssshkey']) {
-                sh "scp -o StrictHostKeyChecking=no target/my-app-1-RELEASE.jar $user@172.31.32.220:/tmp"
+                sh "scp -o StrictHostKeyChecking=no target/my-app-1-RELEASE.jar $user@$target:/tmp"
             }
         }
     }
