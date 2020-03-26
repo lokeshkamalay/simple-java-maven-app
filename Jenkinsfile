@@ -25,14 +25,14 @@ node('demo'){
     }
 }
 
-def getTarget(params) {
-    if (params == 'dev') {
+def getTarget(paramsa) {
+    if (paramsa == 'dev') {
         target = "172.31.32.220"
     }
-    else if(params == 'test') {
+    else if(paramsa == 'test') {
          target = "173.13.13.111"
     } 
-    else if (params == 'prod') {
+    else if (paramsa == 'prod') {
         target = "172.20.22.222"
     }
 }
