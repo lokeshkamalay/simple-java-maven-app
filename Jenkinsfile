@@ -1,4 +1,5 @@
 node('demo'){
+    properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: ['dev', 'test', 'prod'], description: 'Choose the environment you want to put your package into ', name: 'targetEnv')])])
     def mvnHome = tool name: '363', type: 'maven'
     def user = "ec2-user"
     stage ('checkout'){
